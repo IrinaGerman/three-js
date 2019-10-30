@@ -8,8 +8,7 @@ class ThreeD extends React.Component {
         super();
         this.state = {
             scene: '',
-        };
-              
+        };           
     }
         
     componentDidMount () {
@@ -74,8 +73,7 @@ class ThreeD extends React.Component {
         }
     }
     shouldComponentUpdate(nextProps) {
-        console.log(nextProps);
-       
+      
         const {
             figure, size, number
         } = this.props;
@@ -86,13 +84,12 @@ class ThreeD extends React.Component {
               
                 if (nextProps.figure === "cube") {
                     var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-                    console.log("cube render")
                 } if (nextProps.figure === "pyramide") {
                     var geometry = new THREE.CylinderBufferGeometry(  0, 1, 1, 4, 1 );
                 } if (nextProps.figure === "sphere") {
                     var geometry = new THREE.SphereBufferGeometry(  1, 32, 32 );
                 }	
-        
+       
                 geometry.scale ( nextProps.size, nextProps.size, nextProps.size );
 
                 var material = new THREE.MeshPhongMaterial( { color: 0xffffff } );
@@ -104,16 +101,10 @@ class ThreeD extends React.Component {
                 mesh.updateMatrix();
                 mesh.matrixAutoUpdate = false;
 
-                console.log(this.state.scene);
-                console.log(mesh);
-                
                 scene.add(mesh);
                 this.props.onUuid(mesh.uuid);
                 this.props.onScene(scene);
-                console.log(this.props);
-                console.log(nextProps);
-                console.log(this.state.scene);
-                console.log(scene);
+             
             }
         return true;
     }

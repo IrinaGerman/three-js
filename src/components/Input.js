@@ -17,19 +17,17 @@ class Input extends React.Component {
 
   onChange() {
     const $select = document.querySelector(".figure");
-    console.dir($select.selectedIndex);
-    console.dir($select.options[$select.selectedIndex].value);
+    
     this.setState({inputFigure: $select.options[$select.selectedIndex].value});
     
   }
 
   onChangeSize(event) {
-    console.log(event.target.value);
+  
     this.setState({inputSize: event.target.value});
 
     const $select = document.querySelector(".figure");
-    console.dir($select.selectedIndex);
-    console.dir($select.options[$select.selectedIndex].value);
+    
     this.setState({inputFigure: $select.options[$select.selectedIndex].value});
     
   }
@@ -44,11 +42,9 @@ class Input extends React.Component {
     } = this.state;
 
     const $select = document.querySelector(".figure");
-    console.dir($select.selectedIndex);
-    console.dir($select.options[$select.selectedIndex].value);
+    
     this.setState({inputFigure: $select.options[$select.selectedIndex].value});
     
-    console.log(inputFigure, inputSize);
     onFigure(inputFigure);
     onSize(inputSize);
     onNumber();
