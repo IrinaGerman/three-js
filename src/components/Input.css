@@ -1,0 +1,36 @@
+.inputForm {
+	max-width: 400px;
+ 	padding-top: 20px;
+ 	margin: 0 auto;
+}
+.inputForm ul {
+	padding: 0; 
+}
+.inputForm li {
+	list-style: none;
+	margin: 5px;	
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+li input, li button, li select {
+	padding: 5px;
+	border-radius: 30px;
+    border: solid 1px gray;
+    font-size: 25px;
+    outline: none;
+}
+
+option {
+	font-family: "Roboto";
+	font-size: 18px;
+}
+
+li input {
+	padding-left: 15px; 
+}
+
+.figure:hover, .submit:hover, .size:hover {
+  	box-shadow: 0 0 2px 1px gray;
+}

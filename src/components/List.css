@@ -1,0 +1,15 @@
+.figureId {
+	margin: 5px;
+	list-style: none;
+	display: flex;
+	justify-content: left;
+	align-items: center;	
+}
+.uuidDiv {
+	margin: 5px;
+	font-size: 18px;
+}
+.btnDel {
+	border-radius: 2px;
+	font-size: 18px;
+}
