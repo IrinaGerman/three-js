@@ -6,11 +6,11 @@ import number from './number';
 import scene from './scene';
 
 const reducer = combineReducers({
-  figure,
-  size,
-  uuid,
-  number,
-  scene
+	figure,
+	size,
+	uuid,
+	number,
+	scene
 });
 
 export default reducer;

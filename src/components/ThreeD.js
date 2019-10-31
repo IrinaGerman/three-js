@@ -75,7 +75,7 @@ class ThreeD extends React.Component {
     shouldComponentUpdate(nextProps) {
       
         const {
-            figure, size, number
+            number
         } = this.props;
 
         var scene = this.state.scene;
@@ -95,16 +95,16 @@ class ThreeD extends React.Component {
                 var material = new THREE.MeshPhongMaterial( { color: 0xffffff } );
         
                 var mesh = new THREE.Mesh( geometry, material );
-                mesh.position.x = Math.random() * 500;
+                mesh.position.x = Math.random() * 300;
                 mesh.position.y = Math.random() * 300;
                 mesh.position.z = Math.random() * 300;
                 mesh.updateMatrix();
                 mesh.matrixAutoUpdate = false;
 
                 scene.add(mesh);
+                console.log(scene.children);
                 this.props.onUuid(mesh.uuid);
-                this.props.onScene(scene);
-             
+                this.props.onScene(scene);            
             }
         return true;
     }

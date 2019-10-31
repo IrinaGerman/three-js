@@ -5,13 +5,13 @@ import ThreeD from './ThreeD';
 import './App.css';
 
 const App = () => {
-  return (
-    <div className="App">
-      <Input/>
-      <ThreeD/>
-      <List/> 
-    </div>
-  );
+	return (
+		<div className="App">
+			<Input/>
+			<ThreeD/>
+			<List/> 
+		</div>
+	);
 }
 
 export default App;

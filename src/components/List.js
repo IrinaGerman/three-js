@@ -24,25 +24,40 @@ class List extends React.Component {
 
     render() {
         const content = [];
-        this.props.uuid.forEach(item => {
-            content.push(
-            <li className="figureId" data-id={item} key={item}>
-                
-                    <div className="uuidDiv">{item}</div>
-                    <button className="btnDel" onClick={this.onDelete} >x</button>
-                
-            </li>)
-        });
-        return (
-        
+        const {
+            uuid 
+        } = this.props;
+        if (Array.isArray(uuid) && uuid.length !== 0) {
+            uuid.forEach(item => {
+                content.push(
+                <li className="figureId" data-id={item} key={item}>
+                        <div className="uuidDiv">{item}</div>
+                        <button className="btnDel" onClick={this.onDelete} >x</button>
+                </li>)
+            });
+            return (
                 <ul>
                     {content}
                 </ul>         
-        )
+            )
+        // } else {
+        //     const {
+        //         scene 
+        //     } = this.props;
+        //     scene.children.forEach(function (item) {
+        //         if (item.type === "Mesh") {
+        //             scene.remove(item);
+        //         }
+        //     })
+        //     return (
+        //         <div className="message">{uuid}</div>
+        //         );
+        } return (
+            <div className="message">{uuid}</div>
+        );
     }
 }
 export default connect (
-    
     (state) => ({
         uuid: state.uuid,
         scene: state.scene

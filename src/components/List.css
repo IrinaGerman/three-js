@@ -13,3 +13,9 @@
 	border-radius: 2px;
 	font-size: 18px;
 }
+.message {
+	margin: 0 auto;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 30px; 
+}
