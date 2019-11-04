@@ -28,7 +28,7 @@ class ThreeD extends React.Component {
             renderer.setSize( window.innerWidth, window.innerHeight );
             
             document.body.appendChild( renderer.domElement );
-            camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );
+            camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 1, 1000 );
             camera.position.set( 400, 200, 0 );
             // controls
             //controls = new THREE.OrbitControls( camera, renderer.domElement );
@@ -102,7 +102,7 @@ class ThreeD extends React.Component {
                 mesh.matrixAutoUpdate = false;
 
                 scene.add(mesh);
-                console.log(scene.children);
+                
                 this.props.onUuid(mesh.uuid);
                 this.props.onScene(scene);            
             }

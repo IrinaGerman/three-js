@@ -25,7 +25,7 @@ class List extends React.Component {
     render() {
         const content = [];
         const {
-            uuid 
+            uuid, scene, onDelMeshs 
         } = this.props;
         if (Array.isArray(uuid) && uuid.length !== 0) {
             uuid.forEach(item => {
@@ -39,20 +39,14 @@ class List extends React.Component {
                 <ul>
                     {content}
                 </ul>         
-            )
-        // } else {
-        //     const {
-        //         scene 
-        //     } = this.props;
-        //     scene.children.forEach(function (item) {
-        //         if (item.type === "Mesh") {
-        //             scene.remove(item);
-        //         }
-        //     })
-        //     return (
-        //         <div className="message">{uuid}</div>
-        //         );
-        } return (
+            )      
+        } else {
+            if (scene) {
+                onDelMeshs(scene);
+            }   
+        } 
+       
+        return (
             <div className="message">{uuid}</div>
         );
     }
@@ -64,5 +58,6 @@ export default connect (
     }),
     (dispatch) => ({
         onDel: (uuid) => dispatch({type: "DEL_UUID", payload: uuid}),
+        onDelMeshs: (scene) => dispatch({type: "DEL_MESHES", payload: scene})
     }),
 )(List);
